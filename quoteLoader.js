@@ -71,8 +71,17 @@ var quotes = ["Sometimes later becomes never. Do it now.",
             "Goals are the fuel in the furnace of achievement."
         ];
 
+// var name = "";
 
-document.body.innerHTML =  "<h1 class = \"center\">"+getQuotes(0,quotes.length)+"</h1>";
-function getQuotes(min, max) {
-  return quotes[Math.floor(Math.random() * (max - min)) + min];
+var d = new Date();
+var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+var message = "<img class = \"bg\" src = \"backgrounds/"+getRandomNumber(1,26)+".jpg\">";
+
+// message += "<h1 class=\"greet\"><b>Hello "+name+"!</b></h1>";
+message += "<h1 class = \"center\">"+quotes[getRandomNumber(0,quotes.length)]+"</h1><h1 class=\"time\"><b>"+d.getDate()+" "+months[d.getMonth()]+", "+d.getFullYear()+" "+d.getHours()+":"+d.getMinutes()+"</b></h1>";
+        
+document.body.innerHTML =  message;
+function getRandomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min)) + min;
 }
